@@ -17,7 +17,7 @@ class Auth extends CI_Controller
             if ($this->input->post('login')) {
                 $username = $this->input->post('username');
                 $password = $this->input->post('password');
-                $user = $this->user_model->get_user($username, $password);
+                $user = $this->user_model->get_user($username, hash('sha256', $password));
                 if ($user) {
                     $this->session->set_userdata('user_id', $user->idUser);
                     $this->session->set_userdata('user_role', $user->role);
@@ -53,14 +53,14 @@ class Auth extends CI_Controller
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 
-
     public function registrasi()
     {
         $data['error'] = '';
 
-        if ($this->input->post('registrasi')) {
+        if ($this->input->post('registasi')) {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
+            $konfirmasiPassword = $this->input->post('konfirmasiPassword');
             $nama = $this->input->post('nama');
             $jurusan = $this->input->post('jurusan');
             $tahunLulus = $this->input->post('tahunLulus');
@@ -68,30 +68,44 @@ class Auth extends CI_Controller
             $email = $this->input->post('email');
             $uuid = $this->generate_uuid();
 
+            $this->session->set_userdata('r_username', $username);
+            $this->session->set_userdata('r_nama', $nama);
+            $this->session->set_userdata('r_jurusan', $jurusan);
+            $this->session->set_userdata('r_tahunLulus', $tahunLulus);
+            $this->session->set_userdata('r_telp', $telp);
+            $this->session->set_userdata('r_email', $email);
 
+            $data['username'] = $this->session->userdata('r_username');
+            $data['password'] = $this->session->userdata('r_password');
+            $data['nama'] = $this->session->userdata('r_nama');
+            $data['jurusan'] = $this->session->userdata('r_jurusan');
+            $data['tahunLulus'] = $this->session->userdata('r_tahunLulus');
+            $data['r_telp'] = $this->session->userdata('r_telp');
+            $data['email'] = $this->session->userdata('r_email');
 
-            $registrasi = $this->user_model->is_username_exist($username);
-            if ($registrasi) {
-                $data['error'] = 'User Sudah adda';
+            if ($password != $konfirmasiPassword) {
+                $data['error'] = 'Konfirmasi Password Berbeda';
                 $this->load->view('registrasi', $data);
             } else {
-
-
-                $registrasi = $this->user_model->registrasi($uuid, $username, $password, $nama, $jurusan, $tahunLulus, $telp, $email);
-                if ($registrasi == true) {
-                    $data['error'] = 'Registrasi Berhasil';
+                $registrasi = $this->user_model->is_username_exist($username);
+                if ($registrasi) {
+                    $data['error'] = 'User Sudah adda';
                     $this->load->view('registrasi', $data);
                 } else {
-                    $data['error'] = 'Registrasi Gagal';
-                    $this->load->view('registrasi', $data);
+                    $registrasi = $this->user_model->registrasi($uuid, $username, hash('sha256', $password), $nama, $jurusan, $tahunLulus, $telp, $email);
+                    if ($registrasi == true) {
+                        $data['error'] = 'Registrasi Berhasil';
+                        $this->load->view('login', $data);
+                    } else {
+                        $data['error'] = 'Registrasi Gagal';
+                        $this->load->view('registrasi', $data);
+                    }
                 }
+                // $data['error'] = "sdfgsdfgdfgdgsfsdg";
+                // $this->load->view('registrasi', $data);
             }
-            // $data['error'] = "sdfgsdfgdfgdgsfsdg";
-            // $this->load->view('registrasi', $data);
-
         } else {
-            $data['error'] = "sfsf";
-            $this->load->view('registrasi', $data);
+            $this->load->view('registrasi');
         }
         // if ($this->session->userdata('user_id')) {
         //     redirect('Dashboard');

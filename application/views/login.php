@@ -17,16 +17,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-    <div class="relative min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8  bg-no-repeat bg-cover"
+    <div class="relative min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-no-repeat bg-cover"
         style="background-image: url('<?= base_url() ?>dist/images/background/bgLogin.jpg');">
         <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
         <div class="max-w-md w-full space-y-8 p-10 bg-white rounded-xl z-10">
@@ -92,7 +83,6 @@
     </div>
 
     <script src="<?= base_url() ?>node_modules/flowbite/dist/flowbite.min.js"></script>
-    <!-- <script src="main.js"></script> -->
 </body>
 
 </html>
