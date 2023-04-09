@@ -47,7 +47,7 @@
         </a>
     </div>
 
-
+    <a href="<?= base_url(); ?>">BACK</a>
 
 
     <script src="<?= base_url(); ?>dist/js/jquery-3.6.0.min.js"></script>

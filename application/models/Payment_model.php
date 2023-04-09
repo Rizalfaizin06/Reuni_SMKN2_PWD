@@ -14,9 +14,9 @@ class Payment_model extends CI_Model
 
     public function get_status_pembayaran($uuid)
     {
-        $this->db->select('statusBayar');
+        $this->db->select('*');
         $this->db->from('tbl_users');
-        $this->db->where('uuid', $uuid);
+        $this->db->where('uuid', '745217cd-f3a6-49eb-9f71-5f309f26740e');
         $result = $this->db->get()->row();
         return $result;
     }

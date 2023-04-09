@@ -12,7 +12,7 @@ class Ajax extends CI_Controller
         if ($this->input->post('uuidSiswa')) {
             $uuidSiswa = $this->input->post('uuidSiswa');
 
-            $data['status'] = $this->Payment_model->get_status_pembayaran($uuidSiswa);
+            $data['status'] = $this->Payment_model->get_status_pembayaran($uuidSiswa)->statusBayar;
 
             $this->load->view('ajax/status_pembayaran', $data);
 
