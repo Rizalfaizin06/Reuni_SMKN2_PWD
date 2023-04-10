@@ -16,7 +16,7 @@ class Payment_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_users');
-        $this->db->where('uuid', '745217cd-f3a6-49eb-9f71-5f309f26740e');
+        $this->db->where('uuid', $uuid);
         $result = $this->db->get()->row();
         return $result;
     }
