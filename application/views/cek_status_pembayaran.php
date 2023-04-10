@@ -1,53 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-    <title>Izin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?= base_url() ?>dist/css/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- <link rel="icon" href="assets/icons/app/icon_SFM_Rounded.png" type="image/icon type"> -->
+    <title>Student Financial Management</title>
+    <!-- <link rel="manifest" href="manifest.json"> -->
 </head>
 
 <body>
-    <!-- <?php if ($error): ?>
-        <div style="color: red;">
-            <?php echo $error; ?>
-        </div>
-    <?php endif; ?> -->
-
-    <!-- <?php var_dump($uuid); ?> -->
-    <!-- <?php var_dump($info->waktuMulai); ?> -->
-
-    <h1>Verifikasi</h1>
-
-
-
-
-
-
-
-    <div class="grid grid-cols-1 justify-items-center w-full gap-3 p-5" id="allContent">
-
-        <h3 id="result" class="font-poppins font-bold">Scan QR untuk membayar</h3>
-
-        <div class="grid grid-cols-1 justify-items-center bg-white h-64 w-64 rounded-2xl overflow-hidden ">
-            <div class="h-64 w-64 overflow-hidden">
-                <video id="video" class="object-fill"></video>
+    <div class="min-h-screen">
+        <div
+            class="realtive h-64 w-full rounded-b-3xl bg-center cursor-pointer bg-no-repeat object-cover z-10 shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 justify-items-center place-content-evenly align-items-center px-5">
+            <div class="h-28 col-span-2">
+                <h2 class="text-2xl font-bold font-poppins text-white">Rizal Faizin Firdaus</h2>
+                <p class="text-lg font-bold font-poppins text-white">
+                    Teknik informatika 2021
+                </p>
+                <p class="text-lg font-bold font-poppins text-white">
+                    089999999
+                </p>
+                <p class="text-lg font-bold font-poppins text-white">
+                    Rizalsfdljasldfkjlk@
+                </p>
             </div>
-            <div class="relative w-64 h-[50px] -top-64 bg-black bg-opacity-60 justify-self-start"></div>
-            <div class="grid gap-2 grid-cols-2 relative w-64 h-[155px]">
-                <div class="relative w-[46px] h-[155px] -top-64 bg-black bg-opacity-60 justify-self-start"></div>
-                <div class="relative w-[46px] h-[155px] -top-64 bg-black bg-opacity-60 justify-self-end"></div>
+            <div class="">
+                <img class="rounded-full w-28 h-28 shadow" src="<?= base_url() ?>dist/images/icons/logo.jpeg">
             </div>
-            <div class="relative w-64 h-[50px] -top-64 bg-black bg-opacity-60 justify-self-start"></div>
-            <img src="assets/icons/camScan.png" alt="avatar" class="relative h-48 -top-[480px]">
+
+
         </div>
+        <div class="grid grid-cols-1 justify-items-center w-full gap-3 p-5" id="allContent">
+            <div id="scanQR">
+                <h3 class="font-poppins font-bold text-center">Scan QR untuk Verifikasi</h3>
 
-        <a href="index.php" class="px-7 py-3 rounded-lg bg-primary hover:bg-opacity-80">
+                <div class="grid grid-cols-1 justify-items-center bg-white h-64 w-64 rounded-2xl overflow-hidden ">
+                    <div class="h-64 w-64 overflow-hidden">
+                        <video id="video" class="object-fill"></video>
+                    </div>
+                    <div class="relative w-64 h-[50px] -top-64 bg-black bg-opacity-60 justify-self-start"></div>
+                    <div class="grid gap-2 grid-cols-2 relative w-64 h-[155px]">
+                        <div class="relative w-[46px] h-[155px] -top-64 bg-black bg-opacity-60 justify-self-start">
+                        </div>
+                        <div class="relative w-[46px] h-[155px] -top-64 bg-black bg-opacity-60 justify-self-end"></div>
+                    </div>
+                    <div class="relative w-64 h-[50px] -top-64 bg-black bg-opacity-60 justify-self-start"></div>
+                    <img src="<?= base_url(); ?>dist/images/icons/camScan.png" alt="avatar"
+                        class="relative h-48 -top-[480px]">
+                </div>
+            </div>
+            <a href="<?= base_url(); ?>"
+                class="px-7 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-opacity-80">
 
 
-            <span class="text-sm font-poppins font-bold text-white">Back</span>
-        </a>
+                <span class="text-sm font-poppins font-bold text-white">Back</span>
+            </a>
+        </div>
+        <div class="h-20 w-full"></div>
+
+    </div>
+    <div
+        class="fixed bottom-0 w-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-t-3xl grid grid-cols-1 justify-items-center align-items-center place-content-center py-7">
+
+        <h2 class="text-2xl font-bold font-poppins text-white">SMKN 2 PURWODADI</h2>
+    </div>
     </div>
 
-    <a href="<?= base_url(); ?>">BACK</a>
+
 
 
     <script src="<?= base_url(); ?>dist/js/jquery-3.6.0.min.js"></script>
@@ -104,19 +128,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script src="<?= base_url() ?>node_modules/flowbite/dist/flowbite.min.js"></script>
 
 </body>
 
