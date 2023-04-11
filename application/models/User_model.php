@@ -26,7 +26,8 @@ class User_model extends CI_Model
             'telp' => $telp,
             'email' => $email,
             'role' => 'alumni',
-            'statusBayar' => '0'
+            'statusBayar' => '0',
+            'statusHadir' => '0'
         );
 
         if ($this->db->insert('tbl_users', $data)) {

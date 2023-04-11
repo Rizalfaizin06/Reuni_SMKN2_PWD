@@ -22,6 +22,11 @@ class Auth extends CI_Controller
                     $this->session->set_userdata('user_id', $user->idUser);
                     $this->session->set_userdata('user_role', $user->role);
                     $this->session->set_userdata('user_uuid', $user->uuid);
+                    $this->session->set_userdata('user_nama', $user->nama);
+                    $this->session->set_userdata('user_jurusan', $user->jurusan);
+                    $this->session->set_userdata('user_tahunLulus', $user->tahunLulus);
+                    $this->session->set_userdata('user_telp', $user->telp);
+                    $this->session->set_userdata('user_email', $user->email);
                     redirect('Dashboard');
                 } else {
                     $data['error'] = 'Username atau password salah';

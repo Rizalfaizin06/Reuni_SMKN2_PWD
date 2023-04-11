@@ -18,20 +18,19 @@
         <div
             class="realtive h-64 w-full rounded-b-3xl bg-center cursor-pointer bg-no-repeat object-cover z-10 shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 justify-items-center place-content-evenly align-items-center px-5">
             <div class="h-28 col-span-2">
-                <h2 class="text-2xl font-bold font-poppins text-white">Rizal Faizin Firdaus</h2>
+                <h2 class="text-2xl font-bold font-poppins text-white">Admin</h2>
                 <p class="text-lg font-bold font-poppins text-white">
-                    Teknik informatika 2021
+                    Reuni Akbar 2023
                 </p>
                 <p class="text-lg font-bold font-poppins text-white">
-                    089999999
+                    SMKN 2 PWD
                 </p>
-                <p class="text-lg font-bold font-poppins text-white">
-                    Rizalsfdljasldfkjlk@
-                </p>
+
             </div>
             <div class="">
                 <img class="rounded-full w-28 h-28 shadow" src="<?= base_url() ?>dist/images/icons/logo.jpeg">
             </div>
+
 
 
         </div>
@@ -105,11 +104,9 @@
                                 data: { uuidSiswa: result.text },
                                 success: function (response) {
                                     console.log(response);
-                                    $("#allContent").html(response);
+                                    $("#scanQR").html(response);
                                 }
                             });
-
-
                         }
                         if (err && !(err instanceof ZXing.NotFoundException)) {
                             console.error(err)
@@ -117,8 +114,6 @@
                         }
                     })
                     console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
-
-
                 })
                 .catch((err) => {
                     console.error(err)

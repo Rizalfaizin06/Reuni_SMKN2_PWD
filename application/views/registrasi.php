@@ -162,7 +162,8 @@
                                         <span class="">Cancel</span> </a>
                                     <button type="submit"
                                         class="mb-2 md:mb-0 bg-primary px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-opacity-90"
-                                        name="registasi" value="registasi">Daftar</button>
+                                        name="registasi" value="registasi"
+                                        onclick="return confirm('Apakah Data Sudah Benar?');">Daftar</button>
                                 </div>
                             </form>
                         </div>

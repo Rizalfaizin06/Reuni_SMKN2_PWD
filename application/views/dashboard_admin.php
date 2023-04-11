@@ -24,16 +24,14 @@
         <div
             class="realtive h-64 w-full rounded-b-3xl bg-center cursor-pointer bg-no-repeat object-cover z-10 shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 justify-items-center place-content-evenly align-items-center px-5">
             <div class="h-28 col-span-2">
-                <h2 class="text-2xl font-bold font-poppins text-white">Rizal Faizin Firdaus</h2>
+                <h2 class="text-2xl font-bold font-poppins text-white">Admin</h2>
                 <p class="text-lg font-bold font-poppins text-white">
-                    Teknik informatika 2021
+                    Reuni Akbar 2023
                 </p>
                 <p class="text-lg font-bold font-poppins text-white">
-                    089999999
+                    SMKN 2 PWD
                 </p>
-                <p class="text-lg font-bold font-poppins text-white">
-                    Rizalsfdljasldfkjlk@
-                </p>
+
             </div>
             <div class="">
                 <img class="rounded-full w-28 h-28 shadow" src="<?= base_url() ?>dist/images/icons/logo.jpeg">
@@ -41,10 +39,10 @@
 
 
         </div>
-        <div class="p-5 space-y-4">
+        <div class="p-5 space-y-4 grid grid-cols-1 justify-items-center">
 
-            <h4 class="text-3xl font-bold font-poppins">Menu</h4>
-            <div class="grid m-0 grid-cols-2 gap-3 justify-center items-center w-full">
+            <h4 class="text-3xl font-bold font-poppins justify-self-start text-cyan-500">Menu</h4>
+            <div class="grid m-0 grid-cols-2 gap-3 justify-center items-center w-full max-w-md">
                 <a href="<?= base_url() ?>dashboard/verifikasi">
                     <div class=" bg-gradient-to-r from-cyan-500 to-blue-500 opacity-50 rounded-3xl grid grid-cols-1
                     justify-items-center align-items-center place-content-center gap-2 aspect-square">
@@ -67,7 +65,17 @@
                         </p>
                     </div>
                 </a>
+                <a href="<?php echo site_url('auth/logout'); ?>"
+                    class="col-span-2 px-7 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-opacity-80 text-sm font-poppins font-bold text-white text-center">
+                    Download Rekap Kehadiran
 
+                </a>
+                <a href="<?php echo site_url('auth/logout'); ?>"
+                    class="col-span-2 px-7 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-opacity-80 text-sm font-poppins font-bold text-white text-center">
+                    Logout
+
+                </a>
+                <div class="h-20 w-full"></div>
             </div>
 
         </div>

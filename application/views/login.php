@@ -67,8 +67,7 @@
                 </div>
                 <div>
                     <button type="submit" name="login" value="Login"
-                        class="w-full flex justify-center bg-primary text-gray-100 p-4  rounded-full tracking-wide
-                                font-semibold  focus:outline-none focus:shadow-outline hover:bg-orange-300 shadow-lg cursor-pointer transition ease-in duration-100">
+                        class="w-full flex justify-center bg-primary text-gray-100 p-4  rounded-full tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-opacity-50 shadow-lg cursor-pointer transition ease-in duration-100">
                         Sign in
                     </button>
                 </div>

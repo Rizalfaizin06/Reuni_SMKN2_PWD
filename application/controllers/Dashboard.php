@@ -31,13 +31,56 @@ class Dashboard extends CI_Controller
 
     }
 
-    public function verifikasi()
+    public function verifikasi($row_no = 0)
     {
-        $data['users'] = $this->Payment_model->get_all_users();
+        // $data['users'] = $this->Payment_model->get_all_users();
+        // $this->load->view('verifikasi_pembayaran', $data);
+
+
+
+
+        //search text
+        $search = "";
+        if ($this->input->post('search') != '') {
+            $search = $this->input->post('search');
+            $this->session->set_userdata("search", $search);
+        } else {
+            if ($this->session->userdata('search') != "") {
+                $search = $this->session->userdata('search');
+            }
+        }
+
+        //--pagination--
+        $row_per_page = 5;
+
+        if ($row_no != 0) {
+            $row_no = ($row_no - 1) * $row_per_page;
+        }
+        // Pagination Configuration
+        // All record count
+        $config['total_rows'] = $this->Payment_model->get_users_count($search);
+        $config['base_url'] = base_url() . 'dashboard/verifikasi';
+        $config['use_page_numbers'] = true;
+        $config['per_page'] = $row_per_page;
+
+        //initialize
+        $this->pagination->initialize($config);
+
+        $data['pagination'] = $this->pagination->create_links();
+
+        // Get record
+        $data['users'] = $this->Payment_model->get_users($row_no, $row_per_page, $search);
+
+        $data['row'] = $row_no;
+
+        $data['search'] = $search;
+        $data['totalRow'] = $config['total_rows'];
+
         $this->load->view('verifikasi_pembayaran', $data);
-
-
     }
+
+
+
     public function cek_status()
     {
         $this->load->view('cek_status_pembayaran');
@@ -78,7 +121,7 @@ class Dashboard extends CI_Controller
 
     public function update_confirmation()
     {
-        if ($this->input->post('confirm')) {
+        if ($this->input->post('konfirm')) {
             $id = $this->input->post('id');
             $this->Payment_model->update_confirmation($id);
             redirect('dashboard/verifikasi');
@@ -89,5 +132,8 @@ class Dashboard extends CI_Controller
         }
 
     }
+
+
+
 
 }

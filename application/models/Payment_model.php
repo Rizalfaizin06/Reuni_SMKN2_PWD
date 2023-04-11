@@ -88,4 +88,28 @@ class Payment_model extends CI_Model
         $this->db->where('idUser', $id);
         $this->db->update('tbl_users');
     }
+
+
+    public function get_users_count($search = "")
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_users');
+        $this->db->where('role', 'alumni');
+        $this->db->like('nama', $search);
+        $result = $this->db->count_all_results();
+
+        return $result;
+    }
+
+
+    public function get_users($rowno, $rowperpage, $search = "")
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_users');
+        $this->db->where('role', 'alumni');
+        $this->db->like('nama', $search);
+
+        $result = $this->db->limit($rowperpage, $rowno)->get();
+        return $result;
+    }
 }
