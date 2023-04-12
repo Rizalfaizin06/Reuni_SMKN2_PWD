@@ -5,17 +5,63 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user_model');
+
+
     }
 
     public function login()
     {
+        if ($this->input->cookie('uuid', TRUE)) {
+            $uuid = $this->input->cookie('uuid', TRUE);
+            $hashName = $this->input->cookie('key', TRUE);
+
+
+            $user = $this->user_model->get_user_uuid($uuid);
+
+            if (hash('sha256', $user->nama) == $hashName) {
+                $this->session->set_userdata('user_id', $user->idUser);
+                $this->session->set_userdata('user_role', $user->role);
+                $this->session->set_userdata('user_uuid', $user->uuid);
+                $this->session->set_userdata('user_nama', $user->nama);
+                $this->session->set_userdata('user_jurusan', $user->jurusan);
+                $this->session->set_userdata('user_tahunLulus', $user->tahunLulus);
+                $this->session->set_userdata('user_telp', $user->telp);
+                $this->session->set_userdata('user_email', $user->email);
+                $this->session->set_userdata('user_pekerjaan', $user->pekerjaan);
+                $this->session->set_userdata('user_jabatan', $user->jabatan);
+                $this->session->set_userdata('user_namaPerusahaan', $user->namaPerusahaan);
+
+
+                $nama = $user->nama;
+                $hashName = hash('sha256', $nama);
+
+                if ($this->input->post('rememberMe')) {
+                    $cookie_data = array(
+                        'name' => 'uuid',
+                        'value' => $user->uuid,
+                        'expire' => 3600 * 24 * 2,
+                    );
+                    $this->input->set_cookie($cookie_data);
+                    $cookie_data = array(
+                        'name' => 'key',
+                        'value' => $hashName,
+                        'expire' => 3600 * 24 * 2,
+                    );
+                    $this->input->set_cookie($cookie_data);
+                }
+
+
+                redirect('Dashboard');
+            }
+        }
+
         $data['error'] = '';
 
         if ($this->session->userdata('user_id')) {
             redirect('Dashboard');
         } else {
             if ($this->input->post('login')) {
-                $username = $this->input->post('username');
+                $username = strtolower($this->input->post('username'));
                 $password = $this->input->post('password');
                 $user = $this->user_model->get_user($username, hash('sha256', $password));
                 if ($user) {
@@ -30,6 +76,27 @@ class Auth extends CI_Controller
                     $this->session->set_userdata('user_pekerjaan', $user->pekerjaan);
                     $this->session->set_userdata('user_jabatan', $user->jabatan);
                     $this->session->set_userdata('user_namaPerusahaan', $user->namaPerusahaan);
+
+
+                    $nama = $user->nama;
+                    $hashName = hash('sha256', $nama);
+
+                    if ($this->input->post('rememberMe')) {
+                        $cookie_data = array(
+                            'name' => 'uuid',
+                            'value' => $user->uuid,
+                            'expire' => 3600 * 24 * 2,
+                        );
+                        $this->input->set_cookie($cookie_data);
+                        $cookie_data = array(
+                            'name' => 'key',
+                            'value' => $hashName,
+                            'expire' => 3600 * 24 * 2,
+                        );
+                        $this->input->set_cookie($cookie_data);
+                    }
+
+
                     redirect('Dashboard');
                 } else {
                     $data['error'] = 'Username atau password salah';
@@ -42,7 +109,13 @@ class Auth extends CI_Controller
 
     public function logout()
     {
-        $this->session->unset_userdata('user_id');
+        $this->session->sess_destroy();
+
+        // Hapus semua cookies
+        delete_cookie('uuid');
+        delete_cookie('key');
+
+        // $this->session->unset_userdata('user_id');
         redirect('auth/login');
     }
 
@@ -66,7 +139,7 @@ class Auth extends CI_Controller
         $data['error'] = '';
 
         if ($this->input->post('registasi')) {
-            $username = $this->input->post('username');
+            $username = strtolower($this->input->post('username'));
             $password = $this->input->post('password');
             $konfirmasiPassword = $this->input->post('konfirmasiPassword');
             $nama = $this->input->post('nama');

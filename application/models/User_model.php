@@ -13,6 +13,13 @@ class User_model extends CI_Model
 
     }
 
+    public function get_user_uuid($uuid)
+    {
+        $query = $this->db->get_where('tbl_users', array('uuid' => $uuid));
+        return $query->row();
+
+    }
+
     public function registrasi($uuid, $username, $password, $nama, $jurusan, $tahunLulus, $telp, $email, $pekerjaan, $jabatan, $namaPerusahaan)
     {
         $data = array(
