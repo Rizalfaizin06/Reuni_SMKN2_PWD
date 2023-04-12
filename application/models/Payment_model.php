@@ -75,6 +75,13 @@ class Payment_model extends CI_Model
         return $result;
     }
 
+    public function update_kehadiran($uuid)
+    {
+        $this->db->set('statusHadir', '1');
+        $this->db->where('uuid', $uuid);
+        $this->db->update('tbl_users');
+    }
+
     public function update_confirmation($id)
     {
         $this->db->set('statusBayar', '1');

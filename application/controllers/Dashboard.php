@@ -113,12 +113,6 @@ class Dashboard extends CI_Controller
 
     }
 
-    public function test()
-    {
-        echo "cisa";
-
-    }
-
     public function update_confirmation()
     {
         if ($this->input->post('konfirm')) {
