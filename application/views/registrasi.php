@@ -51,7 +51,7 @@
                                         <input placeholder="Masukkan Nama Lengkap"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                                             required type="text" name="nama" id="nama"
-                                            value="<?= (isset($username)) ? $username : '' ?>">
+                                            value="<?= (isset($nama)) ? $nama : '' ?>">
                                         <p class="font-poppins text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                         <input placeholder="Masukkan Jurusan"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                                             type="text" name="jurusan" id="jurusan"
-                                            value="<?= (isset($username)) ? $username : '' ?>" required>
+                                            value="<?= (isset($jurusan)) ? $jurusan : '' ?>" required>
                                     </div>
                                     <div class="w-full flex flex-col mb-3">
                                         <label class="font-poppins font-semibold text-gray-600 py-2">Tahun
@@ -95,14 +95,14 @@
                                             Whatsapp</label>
                                         <input placeholder="Masukkan Nomor Whatsapp"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                            type="text" name="telp" id="telp"
+                                            type="number" name="telp" id="telp"
                                             value="<?= (isset($r_telp)) ? $r_telp : '' ?>" required>
                                     </div>
                                     <div class="w-full flex flex-col mb-3">
                                         <label class="font-poppins font-semibold text-gray-600 py-2">Email</label>
                                         <input placeholder="Masukkan Email"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                            value="<?= (isset($email)) ? $email : '' ?>" required type="text"
+                                            value="<?= (isset($email)) ? $email : '' ?>" required type="email"
                                             name="email" id="email">
                                         <p class="font-poppins text-sm text-red-500 hidden mt-3" id="error">Please fill
                                             out
@@ -116,7 +116,7 @@
                                         <input placeholder="Masukkan Pekerjaan"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                                             type="text" name="pekerjaan" id="pekerjaan"
-                                            value="<?= (isset($r_pekerjaan)) ? $r_pekerjaan : '' ?>" required>
+                                            value="<?= (isset($pekerjaan)) ? $pekerjaan : '' ?>" required>
                                     </div>
                                     <div class="w-full flex flex-col mb-3">
                                         <label class="font-poppins font-semibold text-gray-600 py-2">jabatan</label>
@@ -158,14 +158,14 @@
                                         <label class="font-poppins font-semibold text-gray-600 py-2">Password</label>
                                         <input placeholder="Masukkan Password"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                            type="text" name="password" id="password" required>
+                                            type="password" name="password" id="password" required>
                                     </div>
                                     <div class="w-full flex flex-col mb-3">
                                         <label class="font-poppins font-semibold text-gray-600 py-2">Konfirmasi
                                             Password</label>
                                         <input placeholder="Masukkan Password"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                            type="text" name="konfirmasiPassword" id="konfirmasiPassword" required>
+                                            type="password" name="konfirmasiPassword" id="konfirmasiPassword" required>
                                         <p class="font-poppins text-sm text-red-500 hidden mt-3" id="error">Please fill
                                             out
                                             this field.

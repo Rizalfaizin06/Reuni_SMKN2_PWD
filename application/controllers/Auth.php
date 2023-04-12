@@ -139,17 +139,17 @@ class Auth extends CI_Controller
         $data['error'] = '';
 
         if ($this->input->post('registasi')) {
-            $username = strtolower($this->input->post('username'));
-            $password = $this->input->post('password');
-            $konfirmasiPassword = $this->input->post('konfirmasiPassword');
-            $nama = $this->input->post('nama');
-            $jurusan = $this->input->post('jurusan');
-            $tahunLulus = $this->input->post('tahunLulus');
-            $telp = $this->input->post('telp');
-            $email = $this->input->post('email');
-            $pekerjaan = $this->input->post('pekerjaan');
-            $jabatan = $this->input->post('jabatan');
-            $namaPerusahaan = $this->input->post('namaPerusahaan');
+            $username = htmlspecialchars(strtolower($this->input->post('username')));
+            $password = htmlspecialchars($this->input->post('password'));
+            $konfirmasiPassword = htmlspecialchars($this->input->post('konfirmasiPassword'));
+            $nama = htmlspecialchars($this->input->post('nama'));
+            $jurusan = htmlspecialchars($this->input->post('jurusan'));
+            $tahunLulus = htmlspecialchars($this->input->post('tahunLulus'));
+            $telp = htmlspecialchars($this->input->post('telp'));
+            $email = htmlspecialchars($this->input->post('email'));
+            $pekerjaan = htmlspecialchars($this->input->post('pekerjaan'));
+            $jabatan = htmlspecialchars($this->input->post('jabatan'));
+            $namaPerusahaan = htmlspecialchars($this->input->post('namaPerusahaan'));
             $uuid = $this->generate_uuid();
 
             $this->session->set_userdata('r_username', $username);
