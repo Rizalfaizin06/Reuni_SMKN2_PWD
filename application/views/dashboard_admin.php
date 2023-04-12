@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- <link rel="icon" href="assets/icons/app/icon_SFM_Rounded.png" type="image/icon type"> -->
-    <title>Student Financial Management</title>
+    <link rel="icon" href="<?= base_url() ?>dist/images/icons/logo.jpeg" type="image/icon type">
+    <title>Reuni Bukber SMKN 2 PWD</title>
     <!-- <link rel="manifest" href="manifest.json"> -->
 </head>
 
@@ -65,7 +65,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="<?php echo site_url('auth/logout'); ?>"
+                <a onclick="return alert('Untuk Sementara Belum Dapat Diakses');"
                     class="col-span-2 px-7 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-opacity-80 text-sm font-poppins font-bold text-white text-center">
                     Download Rekap Kehadiran
 

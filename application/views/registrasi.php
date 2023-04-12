@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- <link rel="icon" href="assets/icons/app/icon_SFM_Rounded.png" type="image/icon type"> -->
-    <title>Student Financial Management</title>
+    <link rel="icon" href="<?= base_url() ?>dist/images/icons/logo.jpeg" type="image/icon type">
+    <title>Reuni Bukber SMKN 2 PWD</title>
     <!-- <link rel="manifest" href="manifest.json"> -->
 </head>
 
