@@ -39,9 +39,10 @@
 
 
         </div>
-        <div class="p-5 space-y-4 grid grid-cols-1 justify-items-center">
-
-            <h4 class="text-3xl font-bold font-poppins justify-self-start text-cyan-500">Menu</h4>
+        <div class="p-5 space-y-4 grid grid-cols-1 justify-items-center ">
+            <div class="w-full max-w-md">
+                <h4 class="text-3xl font-bold font-poppins justify-self-start text-cyan-500">Menu</h4>
+            </div>
             <div class="grid m-0 grid-cols-2 gap-3 justify-center items-center w-full max-w-md">
                 <a href="<?= base_url() ?>dashboard/verifikasi">
                     <div class=" bg-gradient-to-r from-cyan-500 to-blue-500 opacity-50 rounded-3xl grid grid-cols-1
