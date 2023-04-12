@@ -36,7 +36,7 @@
             </div>
         </div>
         <!-- <div class="p-5">
-            <h2 colspan="6"
+            <h2 colspan="10"
                 class="text-center text-2xl bg-gradient-to-r from-cyan-300 to-blue-400 font-bold rounded-lg text-white w-full m-5 p-3">
                 alumni
             </h2>
@@ -49,103 +49,145 @@
                 <span class="text-sm font-poppins font-bold text-white">Home</span>
             </a>
         </div>
-
-        <div class="w-full overflow-y-auto p-5 pt-0" id="allContent">
-            <table class="w-full text-sm text-left text-gray-500 ">
-                <thead class="text-xs text-gray-500 uppercase w-full">
-                    <tr>
-                        <th colspan="6" class="p-5">
-                        </th>
-                    </tr>
-
-                    <tr>
-                        <th scope="col" class="px-2 py-3">
-                            No
-                        </th>
-                        <th scope="col" class="px-2 py-3">
-                            Nama
-                        </th>
-                        <th scope="col" class="px-2 py-3">
-                            Jurusan
-                        </th>
-                        <th scope="col" class="px-2 py-3">
-                            Tahun Lulus
-                        </th>
-                        <th scope="col" class="px-2 py-3">
-                            Pembayaran
-                        </th>
-                    </tr>
-                    <tr>
-                        <th colspan="6">
-                            <div class="border-t-2 border-dashed border-gray-400 w-full"></div>
-                        </th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <?php
-                    $count = $row + 1;
-                    foreach ($users->result() as $row):
-                        ?>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <?= $count; ?>
-
+        <div class="w-full p-5">
+            <div class="w-full overflow-y-auto pt-0" id="allContent">
+                <table class="w-full text-sm text-left text-gray-500 ">
+                    <thead class="text-xs text-gray-500 uppercase w-full">
+                        <tr>
+                            <th colspan="10" class="p-5">
                             </th>
-                            <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <?= $row->nama; ?>
-                            </th>
-                            <td scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <?= $row->jurusan; ?>
-                            </td>
-                            <td scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <?= $row->tahunLulus; ?>
-                            </td>
-                            <td scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        </tr>
 
-                                <form action="<?= base_url() ?>dashboard/update_confirmation" method="post">
-                                    <div class="input-group mb-3">
-                                        <input type="hidden" name="id" value="<?= $row->idUser; ?>" class="form-control">
-                                        <!-- <input type="submit" name="confirm" value="Konfirmasi" class="btn btn-primary">
+                        <tr>
+                            <th scope="col" class="px-2 py-3">
+                                No
+                            </th>
+                            <th scope="col" class="px-2 py-3 sticky left-0 bg-white">
+                                Nama
+                            </th>
+                            <th scope="col" class="px-2 py-3">
+                                Jurusan
+                            </th>
+                            <th scope="col" class="px-2 py-3">
+                                Tahun Lulus
+                            </th>
+                            <th scope="col" class="px-2 py-3">
+                                Whatsapp
+                            </th>
+                            <th scope="col" class="px-2 py-3">
+                                Email
+                            </th>
+                            <th scope="col" class="px-2 py-3">
+                                Pekerjaan
+                            </th>
+                            <th scope="col" class="px-2 py-3">
+                                Jabatan
+                            </th>
+                            <th scope="col" class="px-2 py-3">
+                                Nama Perusahaan
+                            </th>
+                            <th scope="col" class="px-2 py-3">
+                                Pembayaran
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="10">
+                                <div class="border-t-2 border-dashed border-gray-400 w-full"></div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php
+                        $count = $row + 1;
+                        foreach ($users->result() as $row):
+                            ?>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ">
+                                    <?= $count; ?>
+
+                                </th>
+                                <th scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white sticky left-0 bg-white">
+                                    <?= $row->nama; ?>
+                                </th>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <?= $row->jurusan; ?>
+                                </td>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <?= $row->tahunLulus; ?>
+                                </td>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <?= $row->telp; ?>
+                                </td>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <?= $row->email; ?>
+                                </td>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <?= $row->pekerjaan; ?>
+                                </td>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <?= $row->jabatan; ?>
+                                </td>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <?= $row->namaPerusahaan; ?>
+                                </td>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+
+                                    <form action="<?= base_url() ?>dashboard/update_confirmation" method="post">
+                                        <div class="input-group mb-3">
+                                            <input type="hidden" name="id" value="<?= $row->idUser; ?>"
+                                                class="form-control">
+                                            <!-- <input type="submit" name="confirm" value="Konfirmasi" class="btn btn-primary">
                                         <input type="submit" name="reject" value="Tolak" class="btn btn-primary"> -->
-                                        <?php if ($row->statusBayar == 0): ?>
-                                            <button type="submit" name="konfirm" value="Konfirmasi"
-                                                onclick="return confirm('Konfirmasi Pembayaran?');"
-                                                class="px-3 py-2 rounded-lg bg-primary hover:bg-opacity-80">
+                                            <?php if ($row->statusBayar == 0): ?>
+                                                <button type="submit" name="konfirm" value="Konfirmasi"
+                                                    onclick="return confirm('Konfirmasi Pembayaran?');"
+                                                    class="px-3 py-2 rounded-lg bg-primary hover:bg-opacity-80">
 
 
-                                                <span class="text-xs font-poppins font-bold text-white">Konfirmasi</span>
-                                            </button>
+                                                    <span class="text-xs font-poppins font-bold text-white">Konfirmasi</span>
+                                                </button>
 
-                                        <?php else: ?>
-                                            <button type="submit" name="reject" value="Tolak"
-                                                onclick="return confirm('Batalkan Konfirmasi?');"
-                                                class="px-3 py-2 rounded-lg bg-red-400 hover:bg-opacity-80">
-                                                <span class="text-xs font-poppins font-bold text-white">Batalkan
+                                            <?php else: ?>
+                                                <button type="submit" name="reject" value="Tolak"
+                                                    onclick="return confirm('Batalkan Konfirmasi?');"
+                                                    class="px-3 py-2 rounded-lg bg-red-400 hover:bg-opacity-80">
+                                                    <span class="text-xs font-poppins font-bold text-white">Batalkan
 
-                                                </span>
-                                            </button>
-                                        <?php endif; ?>
-                                    </div>
-                                </form>
-                            </td>
+                                                    </span>
+                                                </button>
+                                            <?php endif; ?>
+                                        </div>
+                                    </form>
+                                </td>
 
-                            <?php $count++; endforeach; ?>
-                    </tr>
-
-
+                                <?php $count++; endforeach; ?>
+                        </tr>
 
 
-                </tbody>
 
 
-            </table>
+                    </tbody>
 
+
+                </table>
+
+            </div>
         </div>
         <div class="h-fit w-full  grid grid-cols-1 gap-3 justify-items-center place-content-evenly align-items-center ">
 
-            <h2 class="text-xl font-poppins font-bold text-center mr-2 md:mr-8 mt-2">Total
-                Total Peserta : 51
+            <h2 class="text-xl font-poppins font-bold text-center mr-2 md:mr-8 mt-2">Total Peserta :
+                <?= $totalRow; ?>
             </h2>
 
 
