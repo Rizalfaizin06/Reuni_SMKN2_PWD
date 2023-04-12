@@ -27,6 +27,9 @@ class Auth extends CI_Controller
                     $this->session->set_userdata('user_tahunLulus', $user->tahunLulus);
                     $this->session->set_userdata('user_telp', $user->telp);
                     $this->session->set_userdata('user_email', $user->email);
+                    $this->session->set_userdata('user_pekerjaan', $user->pekerjaan);
+                    $this->session->set_userdata('user_jabatan', $user->jabatan);
+                    $this->session->set_userdata('user_namaPerusahaan', $user->namaPerusahaan);
                     redirect('Dashboard');
                 } else {
                     $data['error'] = 'Username atau password salah';
@@ -71,6 +74,9 @@ class Auth extends CI_Controller
             $tahunLulus = $this->input->post('tahunLulus');
             $telp = $this->input->post('telp');
             $email = $this->input->post('email');
+            $pekerjaan = $this->input->post('pekerjaan');
+            $jabatan = $this->input->post('jabatan');
+            $namaPerusahaan = $this->input->post('namaPerusahaan');
             $uuid = $this->generate_uuid();
 
             $this->session->set_userdata('r_username', $username);
@@ -79,6 +85,9 @@ class Auth extends CI_Controller
             $this->session->set_userdata('r_tahunLulus', $tahunLulus);
             $this->session->set_userdata('r_telp', $telp);
             $this->session->set_userdata('r_email', $email);
+            $this->session->set_userdata('r_pekerjaan', $pekerjaan);
+            $this->session->set_userdata('r_jabatan', $jabatan);
+            $this->session->set_userdata('r_namaPerusahaan', $namaPerusahaan);
 
             $data['username'] = $this->session->userdata('r_username');
             $data['password'] = $this->session->userdata('r_password');
@@ -87,6 +96,9 @@ class Auth extends CI_Controller
             $data['tahunLulus'] = $this->session->userdata('r_tahunLulus');
             $data['r_telp'] = $this->session->userdata('r_telp');
             $data['email'] = $this->session->userdata('r_email');
+            $data['pekerjaan'] = $this->session->userdata('r_pekerjaan');
+            $data['jabatan'] = $this->session->userdata('r_jabatan');
+            $data['namaPerusahaan'] = $this->session->userdata('r_namaPerusahaan');
 
             if ($password != $konfirmasiPassword) {
                 $data['error'] = 'Konfirmasi Password Berbeda';
@@ -97,7 +109,7 @@ class Auth extends CI_Controller
                     $data['error'] = 'User Sudah adda';
                     $this->load->view('registrasi', $data);
                 } else {
-                    $registrasi = $this->user_model->registrasi($uuid, $username, hash('sha256', $password), $nama, $jurusan, $tahunLulus, $telp, $email);
+                    $registrasi = $this->user_model->registrasi($uuid, $username, hash('sha256', $password), $nama, $jurusan, $tahunLulus, $telp, $email, $pekerjaan, $jabatan, $namaPerusahaan);
                     if ($registrasi == true) {
                         $data['error'] = 'Registrasi Berhasil';
                         $this->load->view('login', $data);

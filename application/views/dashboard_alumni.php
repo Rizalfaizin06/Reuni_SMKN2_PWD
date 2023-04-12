@@ -18,7 +18,7 @@
     <div class="min-h-screen">
         <div
             class="realtive h-64 w-full rounded-b-3xl bg-center cursor-pointer bg-no-repeat object-cover z-10 shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 justify-items-center place-content-evenly align-items-center px-5">
-            <div class="h-28 col-span-2">
+            <div class="col-span-2">
                 <h2 class="text-2xl font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_nama'); ?>
                 </h2>
@@ -32,8 +32,17 @@
                 <p class="text-lg font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_email'); ?>
                 </p>
+                <p class="text-lg font-bold font-poppins text-white">
+                    <?= $this->session->userdata('user_pekerjaan'); ?>
+                </p>
+                <p class="text-lg font-bold font-poppins text-white">
+                    <?= $this->session->userdata('user_jabatan'); ?>
+                </p>
+                <p class="text-lg font-bold font-poppins text-white">
+                    <?= $this->session->userdata('user_namaPerusahaan'); ?>
+                </p>
             </div>
-            <div class="">
+            <div class="place-self-center">
                 <img class="rounded-full w-28 h-28 shadow" src="<?= base_url() ?>dist/images/icons/logo.jpeg">
             </div>
 

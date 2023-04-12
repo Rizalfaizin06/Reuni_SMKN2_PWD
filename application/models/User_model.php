@@ -13,7 +13,7 @@ class User_model extends CI_Model
 
     }
 
-    public function registrasi($uuid, $username, $password, $nama, $jurusan, $tahunLulus, $telp, $email)
+    public function registrasi($uuid, $username, $password, $nama, $jurusan, $tahunLulus, $telp, $email, $pekerjaan, $jabatan, $namaPerusahaan)
     {
         $data = array(
             'idUser' => 'NULL',
@@ -25,6 +25,9 @@ class User_model extends CI_Model
             'tahunLulus' => $tahunLulus,
             'telp' => $telp,
             'email' => $email,
+            'pekerjaan' => $pekerjaan,
+            'jabatan' => $jabatan,
+            'namaPerusahaan' => $namaPerusahaan,
             'role' => 'alumni',
             'statusBayar' => '0',
             'statusHadir' => '0'
