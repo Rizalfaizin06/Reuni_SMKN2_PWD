@@ -41,11 +41,11 @@ class Dashboard extends CI_Controller
 
         //search text
         $search = "";
-        if ($this->input->post('search') != '') {
+        if ($this->input->method() == 'post') {
             $search = $this->input->post('search');
             $this->session->set_userdata("search", $search);
         } else {
-            if ($this->session->userdata('search') != "") {
+            if ($this->session->userdata('search')) {
                 $search = $this->session->userdata('search');
             }
         }

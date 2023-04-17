@@ -65,9 +65,17 @@
     </div>
     <div
         class="fixed bottom-0 w-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-t-3xl grid grid-cols-1 justify-items-center align-items-center place-content-center py-7">
+        <a href="https://wa.me/6282242279859?text=Halo+Skansawira+Riset+and+Development+Technology.."
+            class="mb-3 px-7 py-3 rounded-lg bg-white hover:bg-opacity-80 w-fit">
 
-        <h2 class="text-2xl font-bold font-poppins text-white">SMKN 2 PURWODADI</h2>
-    </div>
+
+            <span class="text-sm font-poppins font-bold text-blue-500">Hubungi Kami</span>
+        </a>
+        <marquee direction="left" loop="" scrollamount="15">
+            <h2 class="text-2xl font-bold font-poppins text-white">Website ini dibuat oleh SKANSAWIRA RISET &
+                DEVELOPMENT TECHNOLOGY, Kami melayani segala kebutuhan teknologi digital anda. Silahkan hubungi kami
+                dengan klik tombol dibawah.</h2>
+        </marquee>
     </div>
 
 

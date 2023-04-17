@@ -14,7 +14,7 @@ class Ajax extends CI_Controller
 
             $data['status'] = $this->Payment_model->get_status_pembayaran($uuidSiswa)->statusBayar;
 
-            if ($data['status'] == 1) {
+            if ($data['status'] == 1 || $data['status'] == 0) {
                 $this->Payment_model->update_kehadiran($uuidSiswa);
             }
 

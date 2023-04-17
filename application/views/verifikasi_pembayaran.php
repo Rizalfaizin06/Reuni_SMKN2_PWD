@@ -41,160 +41,200 @@
                 alumni
             </h2>
         </div> -->
-        <div class="h-8 w-full pl-3 pt-8">
+        <div class="h-24 md:h-8 w-full px-3 pt-8 grid grid-cols-1 md:grid-cols-2 gap-3">
             <a href="<?= base_url() ?>"
-                class="px-7 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-opacity-80">
+                class="px-7 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-opacity-80 w-fit">
 
 
                 <span class="text-sm font-poppins font-bold text-white">Home</span>
             </a>
+
+
+            <div class="">
+                <form action="<?= base_url('dashboard/verifikasi') ?>" method="post">
+                    <label for="default-search"
+                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <input type="search" id="search" name="search"
+                            class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Cari nama" value="<?= (isset($search)) ? $search : '' ?>">
+                        <button type="submit"
+                            class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                    </div>
+                </form>
+            </div>
+
         </div>
         <div class="w-full p-5">
-            <div class="w-full overflow-y-auto pt-0" id="allContent">
-                <table class="w-full text-sm text-left text-gray-500 ">
-                    <thead class="text-xs text-gray-500 uppercase w-full">
-                        <tr>
-                            <th colspan="10" class="p-5">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope="col" class="px-2 py-3">
-                                No
-                            </th>
-                            <th scope="col" class="px-2 py-3 sticky left-0 bg-white">
-                                Nama
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Jurusan
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Tahun Lulus
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Whatsapp
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Email
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Pekerjaan
-                            </th>
-                            <!--<th scope="col" class="px-2 py-3">-->
-                            <!--    Jabatan-->
-                            <!--</th>-->
-                            <th scope="col" class="px-2 py-3">
-                                Nama Perusahaan
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Kehadiran
-                            </th>
-                            <th scope="col" class="px-2 py-3">
-                                Pembayaran
-                            </th>
-                        </tr>
-                        <tr>
-                            <th colspan="10">
-                                <div class="border-t-2 border-dashed border-gray-400 w-full"></div>
-                            </th>
-                        </tr>
-                    </thead>
+            <?php
+            if ($totalRow != 0):
 
-                    <tbody>
-                        <?php
-                        $count = $row + 1;
-                        foreach ($users->result() as $row):
-                            ?>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ">
-                                    <?= $count; ?>
-
+                ?>
+                <div class="w-full overflow-y-auto pt-0" id="allContent">
+                    <table class="w-full text-sm text-left text-gray-500 ">
+                        <thead class="text-xs text-gray-500 uppercase w-full">
+                            <tr>
+                                <th colspan="10" class="p-5">
                                 </th>
-                                <th scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white sticky left-0 bg-white">
-                                    <?= $row->nama; ?>
+                            </tr>
+                            <tr>
+                                <th scope="col" class="px-2 py-3">
+                                    No
                                 </th>
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= $row->jurusan; ?>
-                                </td>
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= $row->tahunLulus; ?>
-                                </td>
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= $row->telp; ?>
-                                </td>
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= $row->email; ?>
-                                </td>
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= $row->pekerjaan; ?>
-                                </td>
-                                <!--<td scope="row"-->
-                                <!--    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">-->
-                                <!--    <?= $row->jabatan; ?>-->
-                                <!--</td>-->
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= $row->namaPerusahaan; ?>
-                                </td>
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= ($row->statusHadir == 1) ? 'Hadir' : 'Belum Hadir'; ?>
-                                </td>
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <th scope="col" class="px-2 py-3 sticky left-0 bg-white">
+                                    Nama
+                                </th>
+                                <th scope="col" class="px-2 py-3">
+                                    Jurusan
+                                </th>
+                                <th scope="col" class="px-2 py-3">
+                                    Tahun Lulus
+                                </th>
+                                <th scope="col" class="px-2 py-3">
+                                    Whatsapp
+                                </th>
+                                <th scope="col" class="px-2 py-3">
+                                    Email
+                                </th>
+                                <th scope="col" class="px-2 py-3">
+                                    Pekerjaan
+                                </th>
+                                <!--<th scope="col" class="px-2 py-3">-->
+                                <!--    Jabatan-->
+                                <!--</th>-->
+                                <th scope="col" class="px-2 py-3">
+                                    Nama Perusahaan
+                                </th>
+                                <th scope="col" class="px-2 py-3">
+                                    Kehadiran
+                                </th>
+                                <th scope="col" class="px-2 py-3">
+                                    Pembayaran
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="10">
+                                    <div class="border-t-2 border-dashed border-gray-400 w-full"></div>
+                                </th>
+                            </tr>
+                        </thead>
 
-                                    <form action="<?= base_url() ?>dashboard/update_confirmation" method="post">
-                                        <div class="input-group mb-3">
-                                            <input type="hidden" name="id" value="<?= $row->idUser; ?>"
-                                                class="form-control">
-                                            <!-- <input type="submit" name="confirm" value="Konfirmasi" class="btn btn-primary">
+                        <tbody>
+                            <?php
+                            $count = $row + 1;
+                            foreach ($users->result() as $row):
+                                ?>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ">
+                                        <?= $count; ?>
+
+                                    </th>
+                                    <th scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white sticky left-0 bg-white">
+                                        <?= $row->nama; ?>
+                                    </th>
+                                    <td scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $row->jurusan; ?>
+                                    </td>
+                                    <td scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $row->tahunLulus; ?>
+                                    </td>
+                                    <td scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $row->telp; ?>
+                                    </td>
+                                    <td scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $row->email; ?>
+                                    </td>
+                                    <td scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $row->pekerjaan; ?>
+                                    </td>
+                                    <!--<td scope="row"-->
+                                    <!--    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">-->
+                                    <!--    <?= $row->jabatan; ?>-->
+                                    <!--</td>-->
+                                    <td scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= $row->namaPerusahaan; ?>
+                                    </td>
+                                    <td scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <?= ($row->statusHadir == 1) ? 'Hadir' : 'Belum Hadir'; ?>
+                                    </td>
+                                    <td scope="row"
+                                        class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+
+                                        <form action="<?= base_url() ?>dashboard/update_confirmation" method="post">
+                                            <div class="input-group mb-3">
+                                                <input type="hidden" name="id" value="<?= $row->idUser; ?>"
+                                                    class="form-control">
+                                                <!-- <input type="submit" name="confirm" value="Konfirmasi" class="btn btn-primary">
                                         <input type="submit" name="reject" value="Tolak" class="btn btn-primary"> -->
-                                            <?php if ($row->statusBayar == 0): ?>
-                                                <button type="submit" name="konfirm" value="Konfirmasi"
-                                                    onclick="return confirm('Konfirmasi Pembayaran?');"
-                                                    class="px-3 py-2 rounded-lg bg-primary hover:bg-opacity-80">
+                                                <?php if ($row->statusBayar == 0): ?>
+                                                    <button type="submit" name="konfirm" value="Konfirmasi"
+                                                        onclick="return confirm('Konfirmasi Pembayaran?');"
+                                                        class="px-3 py-2 rounded-lg bg-primary hover:bg-opacity-80">
 
 
-                                                    <span class="text-xs font-poppins font-bold text-white">Konfirmasi</span>
-                                                </button>
+                                                        <span class="text-xs font-poppins font-bold text-white">Konfirmasi</span>
+                                                    </button>
 
-                                            <?php else: ?>
-                                                <button type="submit" name="reject" value="Tolak"
-                                                    onclick="return confirm('Batalkan Konfirmasi?');"
-                                                    class="px-3 py-2 rounded-lg bg-red-400 hover:bg-opacity-80">
-                                                    <span class="text-xs font-poppins font-bold text-white">Batalkan
+                                                <?php else: ?>
+                                                    <button type="submit" name="reject" value="Tolak"
+                                                        onclick="return confirm('Batalkan Konfirmasi?');"
+                                                        class="px-3 py-2 rounded-lg bg-red-400 hover:bg-opacity-80">
+                                                        <span class="text-xs font-poppins font-bold text-white">Batalkan
 
-                                                    </span>
-                                                </button>
-                                            <?php endif; ?>
-                                        </div>
-                                    </form>
-                                </td>
+                                                        </span>
+                                                    </button>
+                                                <?php endif; ?>
+                                            </div>
+                                        </form>
+                                    </td>
 
-                                <?php $count++; endforeach; ?>
-                        </tr>
-
-
-
-
-                    </tbody>
+                                    <?php $count++; endforeach;
+                            ?>
+                            </tr>
 
 
-                </table>
 
-            </div>
+
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+            <?php endif; ?>
         </div>
         <div class="h-fit w-full  grid grid-cols-1 gap-3 justify-items-center place-content-evenly align-items-center ">
 
-            <h2 class="text-xl font-poppins font-bold text-center mr-2 md:mr-8 mt-2">Total Peserta :
-                <?= $totalRow; ?>
-            </h2>
+
+            <?php
+            if ($totalRow == 0):
+
+                ?>
+                <h2 class="text-xl font-poppins font-bold text-center mr-2 md:mr-8 mt-24 text-red-500">
+                    Tidak ada data alumni
+                </h2>
+            <?php else: ?>
+                <h2 class="text-xl font-poppins font-bold text-center mr-2 md:mr-8 mt-2">
+                    Total Peserta :
+                    <?= $totalRow; ?>
+                </h2>
+            <?php endif; ?>
 
 
             <div>
@@ -213,7 +253,17 @@
     </div>
     <div
         class="fixed bottom-0 w-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-t-3xl grid grid-cols-1 justify-items-center align-items-center place-content-center py-7">
-        <h2 class="text-2xl font-bold font-poppins text-white">SMKN 2 PURWODADI</h2>
+        <a href="https://wa.me/6282242279859?text=Halo+Skansawira+Riset+and+Development+Technology.."
+            class="mb-3 px-7 py-3 rounded-lg bg-white hover:bg-opacity-80 w-fit">
+
+
+            <span class="text-sm font-poppins font-bold text-blue-500">Hubungi Kami</span>
+        </a>
+        <marquee direction="left" loop="" scrollamount="15">
+            <h2 class="text-2xl font-bold font-poppins text-white">Website ini dibuat oleh SKANSAWIRA RISET &
+                DEVELOPMENT TECHNOLOGY, Kami melayani segala kebutuhan teknologi digital anda. Silahkan hubungi kami
+                dengan klik tombol dibawah.</h2>
+        </marquee>
     </div>
 
 
