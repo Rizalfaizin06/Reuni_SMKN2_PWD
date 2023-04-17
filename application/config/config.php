@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://192.168.10.65/Reuni_SMKN2_PWD/';
+$config['base_url'] = 'https://localhost/Reuni_SMKN2_PWD/';
 
 /*
 |--------------------------------------------------------------------------

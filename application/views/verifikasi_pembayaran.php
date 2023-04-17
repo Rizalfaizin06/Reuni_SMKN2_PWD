@@ -36,7 +36,7 @@
             </div>
         </div>
         <!-- <div class="p-5">
-            <h2 colspan="10"
+            <h2 colspan="11"
                 class="text-center text-2xl bg-gradient-to-r from-cyan-300 to-blue-400 font-bold rounded-lg text-white w-full m-5 p-3">
                 alumni
             </h2>
@@ -54,7 +54,7 @@
                 <table class="w-full text-sm text-left text-gray-500 ">
                     <thead class="text-xs text-gray-500 uppercase w-full">
                         <tr>
-                            <th colspan="10" class="p-5">
+                            <th colspan="11" class="p-5">
                             </th>
                         </tr>
                         <tr>
@@ -86,11 +86,14 @@
                                 Nama Perusahaan
                             </th>
                             <th scope="col" class="px-2 py-3">
+                                Kehadiran
+                            </th>
+                            <th scope="col" class="px-2 py-3">
                                 Pembayaran
                             </th>
                         </tr>
                         <tr>
-                            <th colspan="10">
+                            <th colspan="11">
                                 <div class="border-t-2 border-dashed border-gray-400 w-full"></div>
                             </th>
                         </tr>
@@ -138,6 +141,10 @@
                                 <td scope="row"
                                     class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     <?= $row->namaPerusahaan; ?>
+                                </td>
+                                <td scope="row"
+                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <?= ($row->statusHadir == 1) ? 'Hadir' : 'Belum Hadir'; ?>
                                 </td>
                                 <td scope="row"
                                     class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">

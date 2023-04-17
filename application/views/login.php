@@ -60,7 +60,8 @@
                         </label>
                     </div>
                     <div class="text-sm">
-                        <a href="#" class="font-medium text-primary hover:text-primary">
+                        <a onclick="return alert('Untuk Sementara Dapat Menghubungi Admin Untuk Reset Password');"
+                            class="font-medium text-primary hover:text-primary">
                             Forgot your password?
                         </a>
                     </div>
