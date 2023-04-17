@@ -2,7 +2,7 @@
 
 //config
 
-$config['num_links'] = 3;
+$config['num_links'] = 5;
 
 //styling
 $config['full_tag_open'] = '<nav aria-label="Page navigation example">

@@ -54,7 +54,7 @@
                 <table class="w-full text-sm text-left text-gray-500 ">
                     <thead class="text-xs text-gray-500 uppercase w-full">
                         <tr>
-                            <th colspan="11" class="p-5">
+                            <th colspan="10" class="p-5">
                             </th>
                         </tr>
                         <tr>
@@ -79,9 +79,9 @@
                             <th scope="col" class="px-2 py-3">
                                 Pekerjaan
                             </th>
-                            <th scope="col" class="px-2 py-3">
-                                Jabatan
-                            </th>
+                            <!--<th scope="col" class="px-2 py-3">-->
+                            <!--    Jabatan-->
+                            <!--</th>-->
                             <th scope="col" class="px-2 py-3">
                                 Nama Perusahaan
                             </th>
@@ -93,7 +93,7 @@
                             </th>
                         </tr>
                         <tr>
-                            <th colspan="11">
+                            <th colspan="10">
                                 <div class="border-t-2 border-dashed border-gray-400 w-full"></div>
                             </th>
                         </tr>
@@ -134,10 +134,10 @@
                                     class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     <?= $row->pekerjaan; ?>
                                 </td>
-                                <td scope="row"
-                                    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <?= $row->jabatan; ?>
-                                </td>
+                                <!--<td scope="row"-->
+                                <!--    class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">-->
+                                <!--    <?= $row->jabatan; ?>-->
+                                <!--</td>-->
                                 <td scope="row"
                                     class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     <?= $row->namaPerusahaan; ?>

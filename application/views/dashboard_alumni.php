@@ -35,9 +35,9 @@
                 <p class="text-lg font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_pekerjaan'); ?>
                 </p>
-                <p class="text-lg font-bold font-poppins text-white">
-                    <?= $this->session->userdata('user_jabatan'); ?>
-                </p>
+                <!--<p class="text-lg font-bold font-poppins text-white">-->
+                <!--    <?= $this->session->userdata('user_jabatan'); ?>-->
+                <!--</p>-->
                 <p class="text-lg font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_namaPerusahaan'); ?>
                 </p>

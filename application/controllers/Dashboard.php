@@ -51,7 +51,7 @@ class Dashboard extends CI_Controller
         }
 
         //--pagination--
-        $row_per_page = 5;
+        $row_per_page = 20;
 
         if ($row_no != 0) {
             $row_no = ($row_no - 1) * $row_per_page;

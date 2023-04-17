@@ -73,7 +73,7 @@
                                             <option>Pilih tahun</option>
                                             <?php
                                             $tahunSekarang = date('Y');
-                                            for ($i = $tahunSekarang - 1; $i >= 2010; $i--) {
+                                            for ($i = $tahunSekarang - 1; $i >= 2007; $i--) {
                                                 $selected = '';
                                                 if (isset($tahunLulus) && $tahunLulus == $i) {
                                                     $selected = 'selected';
@@ -118,21 +118,11 @@
                                             type="text" name="pekerjaan" id="pekerjaan"
                                             value="<?= (isset($pekerjaan)) ? $pekerjaan : '' ?>" required>
                                     </div>
-                                    <div class="w-full flex flex-col mb-3">
-                                        <label class="font-poppins font-semibold text-gray-600 py-2">jabatan</label>
-                                        <input placeholder="Masukkan jabatan"
-                                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                            value="<?= (isset($jabatan)) ? $jabatan : '' ?>" required type="text"
+                                    <input placeholder="Masukkan jabatan"
+                                            
+                                            value="Manusia Biasa" required type="hidden"
                                             name="jabatan" id="jabatan">
-                                        <p class="font-poppins text-sm text-red-500 hidden mt-3" id="error">Please fill
-                                            out
-                                            this field.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="md:flex flex-row md:space-x-4 w-full text-xs">
-                                    <div class="mb-3 space-y-2 w-full text-xs">
+                                    <div class="w-full flex flex-col mb-3">
                                         <label class="font-poppins font-semibold text-gray-600 py-2">Nama
                                             Perusahaan</label>
                                         <input placeholder="Masukkan namaPerusahaan"
@@ -142,6 +132,7 @@
                                         <p class="font-poppins text-red text-xs hidden">Please fill out this field.</p>
                                     </div>
                                 </div>
+
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
                                     <div class="mb-3 space-y-2 w-full text-xs">
                                         <label class="font-poppins font-semibold text-gray-600 py-2">Username</label>
