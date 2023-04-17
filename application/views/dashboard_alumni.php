@@ -69,7 +69,7 @@
                 <span class="text-sm font-poppins font-bold text-white">Logout</span>
             </a>
         </div>
-        <div class="h-20 w-full"></div>
+        <div class="h-36 w-full"></div>
 
     </div>
     <div

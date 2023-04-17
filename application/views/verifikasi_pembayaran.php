@@ -248,7 +248,7 @@
 
             <span class="text-sm font-poppins font-bold text-white">Home</span>
         </a> -->
-        <div class="h-28 w-full"></div>
+        <div class="h-40 w-full"></div>
 
     </div>
     <div

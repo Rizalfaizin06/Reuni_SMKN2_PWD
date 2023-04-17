@@ -36,8 +36,6 @@
             <div class="">
                 <img class="rounded-full w-28 h-28 shadow" src="<?= base_url() ?>dist/images/icons/logo.jpeg">
             </div>
-
-
         </div>
         <div class="p-5 space-y-4 grid grid-cols-1 justify-items-center ">
             <div class="w-full max-w-md">
@@ -76,7 +74,7 @@
                     Logout
 
                 </a>
-                <div class="h-20 w-full"></div>
+                <div class="h-36 w-full"></div>
             </div>
 
         </div>
