@@ -19,33 +19,32 @@
         <div
             class="realtive h-64 w-full rounded-b-3xl bg-center cursor-pointer bg-no-repeat object-cover z-10 shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500 grid grid-cols-3 justify-items-center place-content-evenly align-items-center px-5">
             <div class="col-span-2">
-                <h2 class="text-2xl font-bold font-poppins text-white">
+                <h2 class="text-md font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_nama'); ?>
                 </h2>
-                <p class="text-lg font-bold font-poppins text-white">
+                <p class="text-sm font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_jurusan'); ?><span> - </span>
                     <?= $this->session->userdata('user_tahunLulus'); ?>
                 </p>
-                <p class="text-lg font-bold font-poppins text-white">
+                <p class="text-sm font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_telp'); ?>
                 </p>
-                <p class="text-lg font-bold font-poppins text-white">
+                <p class="text-sm font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_email'); ?>
                 </p>
-                <p class="text-lg font-bold font-poppins text-white">
+                <p class="text-sm font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_pekerjaan'); ?>
                 </p>
-                <!--<p class="text-lg font-bold font-poppins text-white">-->
+                <!--<p class="text-sm font-bold font-poppins text-white">-->
                 <!--    <?= $this->session->userdata('user_jabatan'); ?>-->
                 <!--</p>-->
-                <p class="text-lg font-bold font-poppins text-white">
+                <p class="text-sm font-bold font-poppins text-white">
                     <?= $this->session->userdata('user_namaPerusahaan'); ?>
                 </p>
             </div>
             <div class="place-self-center">
-                <img class="rounded-full w-28 h-28 shadow" src="<?= base_url() ?>dist/images/icons/logo.jpeg">
+                <img class="rounded-full w-24 h-24 shadow" src="<?= base_url() ?>dist/images/icons/logo.jpeg">
             </div>
-
 
         </div>
         <div class="grid grid-cols-1 justify-items-center w-full gap-3 p-5" id="allContent">
@@ -83,7 +82,7 @@
         <marquee direction="left" loop="" scrollamount="15">
             <h2 class="text-2xl font-bold font-poppins text-white">Website ini dibuat oleh SKANSAWIRA RISET &
                 DEVELOPMENT TECHNOLOGY, Kami melayani segala kebutuhan teknologi digital anda. Silahkan hubungi kami
-                dengan klik tombol dibawah.</h2>
+                dengan klik tombol diatas.</h2>
         </marquee>
     </div>
 

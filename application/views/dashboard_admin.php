@@ -94,7 +94,7 @@
             <marquee direction="left" loop="" scrollamount="15">
                 <h2 class="text-2xl font-bold font-poppins text-white">Website ini dibuat oleh SKANSAWIRA RISET &
                     DEVELOPMENT TECHNOLOGY, Kami melayani segala kebutuhan teknologi digital anda. Silahkan hubungi kami
-                    dengan klik tombol dibawah.</h2>
+                    dengan klik tombol diatas.</h2>
             </marquee>
         </div>
     </div>

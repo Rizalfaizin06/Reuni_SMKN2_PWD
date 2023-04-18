@@ -171,7 +171,7 @@
                                     </td>
                                     <td scope="row"
                                         class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <?= ($row->statusHadir == 1) ? 'Hadir' : 'Belum Hadir'; ?>
+                                        <?= ($row->statusHadir == 1) ? 'Sudah Hadir' : 'Belum Hadir'; ?>
                                     </td>
                                     <td scope="row"
                                         class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -262,7 +262,7 @@
         <marquee direction="left" loop="" scrollamount="15">
             <h2 class="text-2xl font-bold font-poppins text-white">Website ini dibuat oleh SKANSAWIRA RISET &
                 DEVELOPMENT TECHNOLOGY, Kami melayani segala kebutuhan teknologi digital anda. Silahkan hubungi kami
-                dengan klik tombol dibawah.</h2>
+                dengan klik tombol diatas.</h2>
         </marquee>
     </div>
 
