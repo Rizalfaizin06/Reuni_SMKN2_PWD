@@ -8,6 +8,10 @@ class Export extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Payment_model');
+        if ($this->session->userdata('user_role') != "admin") {
+            redirect('auth/login');
+            exit;
+        }
     }
 
     public function index()

@@ -36,7 +36,10 @@ class Dashboard extends CI_Controller
         // $data['users'] = $this->Payment_model->get_all_users();
         // $this->load->view('verifikasi_pembayaran', $data);
 
-
+        if ($this->session->userdata('user_role') != "admin") {
+            redirect('auth/login');
+            exit;
+        }
 
 
         //search text
@@ -83,6 +86,10 @@ class Dashboard extends CI_Controller
 
     public function cek_status()
     {
+        if ($this->session->userdata('user_role') != "admin") {
+            redirect('auth/login');
+            exit;
+        }
         $this->load->view('cek_status_pembayaran');
 
     }
@@ -115,6 +122,10 @@ class Dashboard extends CI_Controller
 
     public function update_confirmation()
     {
+        if ($this->session->userdata('user_role') != "admin") {
+            redirect('auth/login');
+            exit;
+        }
         if ($this->input->post('konfirm')) {
             $id = $this->input->post('id');
             $this->Payment_model->update_confirmation($id);
