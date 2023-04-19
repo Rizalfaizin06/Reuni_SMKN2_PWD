@@ -64,8 +64,10 @@ class Export extends CI_Controller
             $pdf->SetX(3);
             $count++;
         }
+        $totalAlumniInt = $count - 1;
+        $totalAlumniString = 'Total Alumni = ' . $totalAlumniInt . '    ';
         $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(290, 10, 'Total Alumni = ' . $count - 1 . '   ', 1, 0, 'R');
+        $pdf->Cell(290, 10, $totalAlumniString, 1, 0, 'R');
 
         $pdf->Output('I', 'Daftar Alumni.pdf');
     }
